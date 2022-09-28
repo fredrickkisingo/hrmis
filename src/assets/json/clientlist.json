@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "image": "client-img.png",
+        "name": "Carlson Tech",
+        "clientid": "CLT-0008",
+        "contactperson": "Betty Carlson",
+        "email": "bettycarlson@example.com",
+        "mobile": "9876543210",
+        "status": "Inactive"
+    },
+    {
+        "id": 2,
+        "image": "client-img.png",
+        "name": "Cream Inc",
+        "clientid": "CLT-0003",
+        "contactperson": "Ruby Bartlett",
+        "email": "rubybartlett@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    },
+    {
+        "id": 3,
+        "image": "client-img.png",
+        "name": "Delta Infotech",
+        "clientid": "CLT-0002",
+        "contactperson": "Tressa Wexler",
+        "email": "tressawexler@example.com",
+        "mobile": "9876543210",
+        "status": "Inactive"
+    },
+    {
+        "id": 4,
+        "image": "client-img.png",
+        "name": "Global Technologies",
+        "clientid": "CLT-0001",
+        "contactperson": "Barry Cuda",
+        "email": "barrycuda@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    },
+    {
+        "id": 5,
+        "image": "client-img.png",
+        "name": "International Software Inc",
+        "clientid": "CLT-0006",
+        "contactperson": "Walter Weaver",
+        "email": "walterweaver@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    },
+    {
+        "id": 6,
+        "image": "client-img.png",
+        "name": "Mercury Software Inc",
+        "clientid": "CLT-0007",
+        "contactperson": "Amanda Warren",
+        "email": "amandawarren@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    },
+    {
+        "id": 7,
+        "image": "client-img.png",
+        "name": "Mustang Technologies",
+        "clientid": "CLT-0005",
+        "contactperson": "Daniel Deacon",
+        "email": "danieldeacon@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    },
+     {
+        "id": 8,
+        "image": "client-img.png",
+        "name": "Wellware Company",
+        "clientid": "CLT-0004",
+        "contactperson": "Misty Tison",
+        "email": "mistytison@example.com",
+        "mobile": "9876543210",
+        "status": "Active"
+    }
+]

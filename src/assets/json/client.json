@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "image": "client-img.png",
+        "name": "Global Technologies",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 2,
+        "image": "client-img.png",
+        "name": "Delta Infotech",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 3,
+        "image": "client-img.png",
+        "name": "Cream Inc",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 4,
+        "image": "client-img.png",
+        "name": "Wellware Company",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 5,
+        "image": "client-img.png",
+        "name": "Mustang Technologies",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 6,
+        "image": "client-img.png",
+        "name": "International Software Inc",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 7,
+        "image": "client-img.png",
+        "name": "Mercury Software Inc",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    },
+    {
+        "id": 8,
+        "image": "client-img.png",
+        "name": "Carlson Tech",
+        "name1": "Barry Cuda",
+        "owner": "CEO"
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    },
+    {
+        "id": 2,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "Frontend Develpment"
+    },
+    {
+        "id": 3,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "IOS"
+    },
+    {
+        "id": 4,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    },
+    {
+        "id": 5,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    },
+    {
+        "id": 6,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "Frontend Develpment"
+    },
+    {
+        "id": 7,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "IOS"
+    },
+    {
+        "id": 8,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    },
+    {
+        "id": 9,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    },
+    {
+        "id": 10,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "Frontend Develpment"
+    },
+    {
+        "id": 11,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "IOS"
+    },
+    {
+        "id": 12,
+        "image": "avatar-02.jpg",
+        "name": "Martin Huges",
+        "designation": "Web Designer",
+        "role": "UI/UX"
+    }
+]

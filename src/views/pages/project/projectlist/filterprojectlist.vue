@@ -1,0 +1,54 @@
+<template>
+
+  <!-- Search Filter -->
+          <div class="row filter-row">
+          <div class="col-md-8">
+              <div class="row">
+            <div class="col-sm-6 col-md-3">  
+              <div class="form-group form-focus mb-0">
+                <input type="text" class="form-control floating">
+                <label class="focus-label">Project Name</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">  
+              <div class="form-group form-focus mb-0">
+                <input type="text" class="form-control floating">
+                <label class="focus-label">Employee Name</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3"> 
+              <div class="form-group form-focus select-focus mb-0">
+                <vue-select :options="projectlistrole" />
+                <label class="focus-label">Role</label>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">  
+                  <a href="#" class="btn btn-success btn-search"><i class="fas fa-search me-2"></i> Search </a>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-4">
+              <div class="add-emp-section">
+                <router-link to="/projects" class="grid-icon"><i class="fas fa-th"></i></router-link>
+                <router-link to="/project-list" class="list-icon active"><i class="fas fa-bars"></i></router-link>
+                <a href="#" class="btn btn-success btn-add-emp" data-bs-toggle="modal" data-bs-target="#create_project"><i class="fas fa-plus"></i> Create Project</a>
+              </div>
+            </div>    
+           </div>
+          <!-- /Search Filter -->
+</template>
+<script>
+  import Vue from 'vue'
+  export default {
+    data() {
+    return {
+      projectlistrole: ["Select Roll", "Web Developer", "Web Designer", "Android Developer", "Ios Developer"]
+    }
+    },
+    components: {
+   
+    },
+    mounted() {
+    },
+  }
+</Script>
