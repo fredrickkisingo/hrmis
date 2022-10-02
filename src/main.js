@@ -896,7 +896,7 @@ app.component('modresignation', modalresignation );
 app.component('resinationtab', resignationtable );
 
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'http://46.101.93.77';
 
 
 app.component('vue-select', VueSelect);
