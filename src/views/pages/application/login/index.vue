@@ -20,10 +20,7 @@
                     class="form-control"
                     :class="{ 'is-invalid': errors.email }"
                   />
-                  <div
-                    class="invalid-feedback"
-                    v-if="errors.hasOwnProperty('email')"
-                  >
+                  <div class="invalid-feedback" v-if="errors.email">
                     {{ errors.email[0] }}
                   </div>
                   <div class="emailshow text-danger" id="email"></div>
@@ -41,15 +38,16 @@
                   </div>
                   <input
                     name="password"
-                    type="password"
+                    :type="showPassword ? 'text' : 'password'"
                     v-model="form.password"
                     class="form-control pass-input"
                     :class="{ 'is-invalid': errors.password }"
-                  /><span class="fa fa-eye-slash toggle-password pt-4"></span>
-                  <div
-                    class="invalid-feedback"
-                    v-if="errors.hasOwnProperty('password')"
-                  >
+                  /><span
+                    @click="showPassword = !showPassword"
+                    class="fa toggle-password pt-4"
+                    :class="showPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  ></span>
+                  <div class="invalid-feedback" v-if="errors.password">
                     {{ errors.password[0] }}
                   </div>
                   <div class="emailshow text-danger" id="password"></div>
@@ -84,34 +82,74 @@ import axios from "axios";
 
 import { mapStores } from "pinia";
 import { useAuthStore } from "../../../../store/AuthStore.js";
-import {ref} from 'vue'
-import {router} from '../../../../router/index'
+import { ref } from "vue";
+import { router } from "../../../../router/index";
+import { fetchUser } from "../../../../utils/auth.js";
 const form = ref({
   email: "",
   password: "",
 });
 
-const store = useAuthStore()
+const store = useAuthStore();
 
-const {setUser} = store
+const { setUser } = store;
 
 const errors = ref({});
 
 const showPassword = ref(false);
 
-function onSubmit() {
-  axios.get("/sanctum/csrf-cookie").then((response) => {
-    axios
-      .post("/login", form)
-      .then((response) => {
-        axios.get("/api/user").then(({data, status}) => {
-          setUser(data)
-          router.push({name: 'landing'})
-        });
-      })
-      .catch((error) => console.log(error)); // credentials didn't match
-  });
+function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
 }
 
+const completeform = form.value
+
+function onSubmit() {
+const email = completeform.email
+const password= completeform.password
+
+
+  // if (!email.length) {
+  //   errors.value = { email: ["Email is required!"] };
+  // }else if(email.length){
+
+  //   errors.value=''
+  // }
+
+  // if (!password.length) {
+  //   errors.value = {
+  //     ...errors.value,
+  //     password: ["Password is required"],
+  //   };
+  // }else if(password.length){
+  //   errors.value = {
+  //     ...errors.value,
+  //     '': '',
+  //   };  
+  // }
+
+  // console.log(errors)
+
+  // if(!(isEmpty(errors.value))){
+  //   return;
+  // }
+
+  axios.get("/sanctum/csrf-cookie").then((response) => {
+    axios
+      .post("/login", form.value)
+      .then(async (response) => {
+        const newUser = await fetchUser();
+        setUser(newUser);
+        router.push({ name: "landing" });
+      })
+      .catch((error) => {
+        console.log(error.response.data.errors);
+
+        if (error.response.status == 422) {
+          errors.value = error.response.data.errors;
+        }
+      }); // credentials didn't match);
+  });
+}
 </script>
 <style></style>

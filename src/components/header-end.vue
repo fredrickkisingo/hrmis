@@ -1,18 +1,31 @@
- <template>
-<li class="nav-item dropdown has-arrow main-drop">
-            <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-              <span class="user-img"><img src="../assets/img/profiles/avatar-21.jpg" alt=""></span>
-              <span>{{ user ? user.name : 'N/A'}}</span>
-            </a>
-            <div class="dropdown-menu">
-              <router-link class="dropdown-item" to="/profile">My Profile</router-link>
-              <router-link class="dropdown-item" to="/settings">Settings</router-link>
-              <router-link class="dropdown-item" to="/login">Logout</router-link>
-            </div>
-          </li>
+<template>
+  <li class="nav-item dropdown has-arrow main-drop">
+    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+      <span class="user-img"
+        ><img src="../assets/img/profiles/avatar-21.jpg" alt=""
+      /></span>
+      <span>{{ user ? user.name : "N/A" }}</span>
+    </a>
+    <div class="dropdown-menu">
+      <router-link class="dropdown-item" to="/profile">My Profile</router-link>
+      <router-link class="dropdown-item" to="/settings">Settings</router-link>
+      <a class="dropdown-item" href="#" @click.prevent="logOut">Logout</a>
+    </div>
+  </li>
 </template>
 <script setup>
-  import {useAuthStore} from '../store/AuthStore.js'
-  const store = useAuthStore()
-  const {user} =  store
+  import axios from "axios";
+import { router } from "../router/index.js";
+import { useAuthStore } from "../store/AuthStore.js";
+const store = useAuthStore();
+const { setUser, user } = store;
+
+function logOut(){
+  axios.post('/api/logout').then(({data,status}) => {
+    setUser(null);
+          // next();
+          router.push({name:'login'})
+        })
+
+}
 </script>

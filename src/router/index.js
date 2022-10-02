@@ -216,6 +216,8 @@ import resignation from "../views/pages/resignation";
 import subscriptioncompany from "../views/pages/subscription/subscriptioncompany";
 import subscriptions from "../views/pages/subscription/subscriptions";
 import subscribedcompanies from "../views/pages/subscription/subscribedcompanies";
+import { useAuthStore } from "../store/AuthStore";
+import { fetchUser } from "../utils/auth";
 const axios = require("axios");
 
 const routes = [
@@ -223,18 +225,23 @@ const routes = [
     path: "",
     name: "landing",
     component: () => import("../views/pages/dashboard/admin/main"),
-    beforeEnter: (to, form, next) => {
-      axios
-        .get("http://localhost:8000/sanctum/csrf-cookie")
-        .then((response) => {
-          next();
-        })
-        .catch(() => {
-          console.log("Hello");
-          next("/login");
+    beforeEnter: async (to, form, next) => {
+      const { setUser, user } = useAuthStore();
 
-          // return next({name:'Login'})
-        });
+      const authenticatedUser =
+        user || JSON.parse(localStorage.getItem("user"));
+      if (authenticatedUser != null) {
+        //user is logged in
+        setUser(authenticatedUser);
+      } else {
+        try {
+          const newUser = await fetchUser();
+          setUser(newUser);
+        } catch (e) {
+          next("login");
+        }
+      }
+      next();
     },
   },
   {
