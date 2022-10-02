@@ -50,6 +50,13 @@
                   <div class="invalid-feedback" v-if="errors.password">
                     {{ errors.password[0] }}
                   </div>
+                  <input
+                    name="device_name"
+                    type="hidden"
+                    v-model="web"
+                    class="form-control"
+                    :class="{ 'is-invalid': errors.device_name }"
+                  />
                   <div class="emailshow text-danger" id="password"></div>
                 </div>
                 <div class="form-group text-center">
@@ -88,6 +95,7 @@ import { fetchUser } from "../../../../utils/auth.js";
 const form = ref({
   email: "",
   password: "",
+  device_name:"web"
 });
 
 const store = useAuthStore();
@@ -113,7 +121,7 @@ const password= completeform.password
   //   errors.value = { email: ["Email is required!"] };
   // }else if(email.length){
 
-  //   errors.value=''
+  //   errors.value='' 
   // }
 
   // if (!password.length) {
@@ -135,15 +143,17 @@ const password= completeform.password
   // }
 
   axios.get("/sanctum/csrf-cookie").then((response) => {
+
     axios
-      .post("/login", form.value)
+      .post("/api/auth/login", form.value)
       .then(async (response) => {
-        const newUser = await fetchUser();
+
+        const newUser = await fetchUser(response.data.access_token);
         setUser(newUser);
         router.push({ name: "landing" });
       })
       .catch((error) => {
-        console.log(error.response.data.errors);
+        console.log(error.response);
 
         if (error.response.status == 422) {
           errors.value = error.response.data.errors;
