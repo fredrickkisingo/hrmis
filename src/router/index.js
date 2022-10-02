@@ -245,21 +245,6 @@ const routes = [
     },
   },
   {
-    path: "/index",
-    name: "indexs",
-    component: () => import("../views/pages/dashboard/admin/main"),
-    beforeEnter: (to, form, next) => {
-      axios
-        .get("https://hrmis/api/authenticated")
-        .then(() => {
-          next();
-        })
-        .catch(() => {
-          return next({ name: "Login" });
-        });
-    },
-  },
-  {
     path: "/employee-dashboard",
     name: "employee-dashboard",
     component: () => import("../views/pages/dashboard/employee"),
