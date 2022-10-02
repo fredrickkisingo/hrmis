@@ -141,6 +141,7 @@ const password= completeform.password
   // if(!(isEmpty(errors.value))){
   //   return;
   // }
+  
 
   axios.get("/sanctum/csrf-cookie").then((response) => {
 
