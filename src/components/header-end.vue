@@ -26,10 +26,14 @@ function logOut(){
 
   console.log(token)
 
+
  
   axios.post('/api/logout',{
+    //data
+  },{
         headers: {
           Authorization: `Bearer ${token}`,
+          token: token
         },
       }).then(({data,status}) => {
     setUser(null);
