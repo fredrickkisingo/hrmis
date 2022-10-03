@@ -102,6 +102,8 @@ const store = useAuthStore();
 
 const { setUser } = store;
 
+const { setAccessToken } = store;
+
 const errors = ref({});
 
 const showPassword = ref(false);
@@ -141,7 +143,7 @@ const password= completeform.password
   // if(!(isEmpty(errors.value))){
   //   return;
   // }
-  
+
 
   axios.get("/sanctum/csrf-cookie").then((response) => {
 
@@ -151,10 +153,11 @@ const password= completeform.password
 
         const newUser = await fetchUser(response.data.access_token);
         setUser(newUser);
+        setAccessToken(response.data.access_token);
         router.push({ name: "landing" });
       })
       .catch((error) => {
-        console.log(error.response);
+        // console.log(error.response);
 
         if (error.response.status == 422) {
           errors.value = error.response.data.errors;

@@ -5,6 +5,7 @@
         ><img src="../assets/img/profiles/avatar-21.jpg" alt=""
       /></span>
       <span>{{ user ? user.name : "N/A" }}</span>
+
     </a>
     <div class="dropdown-menu">
       <router-link class="dropdown-item" to="/profile">My Profile</router-link>
@@ -18,10 +19,19 @@
 import { router } from "../router/index.js";
 import { useAuthStore } from "../store/AuthStore.js";
 const store = useAuthStore();
-const { setUser, user } = store;
+const { setUser, user,acesstoken } = store;
 
 function logOut(){
-  axios.post('/api/logout').then(({data,status}) => {
+  var token =  localStorage.getItem('acesstoken');
+
+  console.log(token)
+
+ 
+  axios.post('/api/logout',{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(({data,status}) => {
     setUser(null);
           // next();
           router.push({name:'login'})
