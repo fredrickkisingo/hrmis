@@ -24,9 +24,7 @@ const { setUser, user,acesstoken } = store;
 function logOut(){
   var token =  localStorage.getItem('acesstoken');
 
-  console.log(token)
-
-
+  
  
   axios.post('/api/logout',{
     //data
