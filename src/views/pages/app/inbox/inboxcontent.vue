@@ -110,7 +110,7 @@
                             </td>
                             <td><span class="mail-important"><i class="fa fa-star-o"></i></span></td>
                             <td class="name">Twitter</td>
-                            <td class="subject">HRMS Bootstrap Admin Template</td>
+                            <td class="subject">HRMS e</td>
                             <td></td>
                             <td class="mail-date">30 Nov</td>
                           </tr>

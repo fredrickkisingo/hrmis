@@ -20,13 +20,13 @@
                 </div>
                 <div class="form-group password-icon2">
                   <label>Password</label> <span class="text-danger">*</span>
-                  <Field name="password" type="password" class="form-control pass-input" :class="{ 'is-invalid': errors.password }" />
+                  <Field name="password" type="password" autocomplete="on" class="form-control pass-input" :class="{ 'is-invalid': errors.password }" />
                   <div class="invalid-feedback">{{errors.password}}</div>
                   <div class="emailshow text-danger" id="password"></div>
                 </div>
                 <div class="form-group password-icon2">
                   <label>Repeat Password</label> <span class="text-danger">*</span>
-                  <Field name="confirmpassword" type="password" class="form-control pass-input" :class="{ 'is-invalid': errors.confirmpassword }" />
+                  <Field name="confirmpassword" type="password" autocomplete="on"  class="form-control pass-input" :class="{ 'is-invalid': errors.confirmpassword }" />
                   <div class="invalid-feedback">{{errors.confirmpassword}}</div>
                   <div class="emailshow text-danger" id="confirmpassword"></div>
                 </div>

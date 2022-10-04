@@ -37,7 +37,7 @@
                     </div>
                   </div>
                   <input
-                    name="password"
+                    name="password" autocomplete="on"
                     :type="showPassword ? 'text' : 'password'"
                     v-model="form.password"
                     class="form-control pass-input"
