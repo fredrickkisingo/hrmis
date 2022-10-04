@@ -10,6 +10,11 @@
                 home
               </span>
             </a>
+            <a  v-bind:class="{'active': currentPath == 'users'}" class="nav-link" id="v-pills-users-tab" title="Users" data-bs-toggle="pill" href="#v-pills-users" role="tab" aria-controls="v-pills-users" aria-selected="false">
+              <span class="material-icons-outlined">
+                group_add
+              </span>
+            </a>
             <a v-bind:class="{'show active': currentPath == 'chat'  || currentPath == 'voice-call'  || currentPath == 'video-call'  || currentPath == 'outgoing-call'  || currentPath == 'incoming-call'  || currentPath == 'events'  || currentPath == 'contacts'  || currentPath == 'inbox'  || currentPath == 'file-manager'}" class="nav-link" id="v-pills-apps-tab" title="Apps" data-bs-toggle="pill" href="#v-pills-apps" role="tab" aria-controls="v-pills-apps" aria-selected="false">
               <span class="material-icons-outlined">
                 dashboard
@@ -115,11 +120,7 @@
                 toggle_off
               </span>
             </a>
-            <a  v-bind:class="{'active': currentPath == 'users'}" class="nav-link" id="v-pills-users-tab" title="Users" data-bs-toggle="pill" href="#v-pills-users" role="tab" aria-controls="v-pills-users" aria-selected="false">
-              <span class="material-icons-outlined">
-                group_add
-              </span>
-            </a>
+           
             <a  v-bind:class="{'active': currentPath == 'approval-setting' || currentPath == 'settings'}" class="nav-link" id="v-pills-settings-tab" title="Settings" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
               <span class="material-icons-outlined">
                 settings
@@ -184,11 +185,11 @@
 
 
 
-            <div v-bind:class="{'show active': currentPath == 'employee-dashboard'  || currentPath == 'index'  || currentPath == '/'}" class="tab-pane fade" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+            <div v-bind:class="{'show active': currentPath == 'employee-dashboard'  || currentPath == 'landing'  || currentPath == '/'}" class="tab-pane fade" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
               <p>Dashboard</p>
               <ul>
                 <li>
-                  <router-link v-bind:class="{'active': currentPath == 'index' || currentPath == '/'}" to="/index">Admin Dashboard</router-link>
+                  <router-link v-bind:class="{'active': currentPath == 'landing' || currentPath == '/'}" to="/">Admin Dashboard</router-link>
                 </li>
                 <li>
                   <router-link v-bind:class="{'active': currentPath == 'employee-dashboard'}" to="/employee-dashboard">Employee Dashboard</router-link>
@@ -381,6 +382,12 @@
               <p>Users</p>
               <ul>
                 <li><router-link v-bind:class="{'active': currentPath == 'users'}" to="/users"> Users </router-link></li>
+              </ul>
+            </div>
+
+            <div v-bind:class="{'show active': currentPath == 'users'}" class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
+              <ul>
+                <li><router-link v-bind:class="{'active': currentPath == 'users'}" to="/users"> Users Roles</router-link></li>
               </ul>
             </div>
             <div v-bind:class="{'show active': currentPath == 'approval-setting' || currentPath == 'settings'}" class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
