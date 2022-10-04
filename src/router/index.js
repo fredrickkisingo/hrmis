@@ -197,6 +197,11 @@ import taskboard from "../views/pages/projects/taskboard";
 /********user route******/
 import users from "../views/pages/users";
 
+
+/********user rolesroute******/
+import userroles from "../views/pages/user-roles";
+
+
 /********training route******/
 import maintraining from "../views/pages/training/maintraining";
 import training from "../views/pages/training/maintraining";
@@ -220,16 +225,20 @@ import { useAuthStore } from "../store/AuthStore";
 import { fetchUser } from "../utils/auth";
 const axios = require("axios");
 
+
+
+
 const routes = [
   {
-    path: "",
+    path: "/",
     name: "landing",
     component: () => import("../views/pages/dashboard/admin/main"),
     beforeEnter: async (to, form, next) => {
-      const { setUser, user } = useAuthStore();
+      const { setUser, user,accesstoken } = useAuthStore();
 
       const authenticatedUser =
         user || JSON.parse(localStorage.getItem("user"));
+        accesstoken || localStorage.getItem("accesstoken")
       if (authenticatedUser != null) {
         //user is logged in
         setUser(authenticatedUser);
@@ -1127,6 +1136,14 @@ const routes = [
     },
   },
   {
+    path: "/user-roles",
+    name: "user-roles",
+    component: () => import("../views/pages/user-roles"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/user-reports",
     name: "user-reports",
     component: () => import("../views/pages/reports/userreport"),
@@ -1425,7 +1442,7 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory("template2"),
+  history: createWebHistory("hrmis"),
   linkActiveClass: "active",
   routes,
 });
