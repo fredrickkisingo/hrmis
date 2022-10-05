@@ -16,7 +16,7 @@
               <div class="page-head-box">
                 <h3>Users</h3>
                 <ul class="breadcrumb">
-                  <li class="breadcrumb-item"><router-link to="/index">Dashboard</router-link></li>
+                  <li class="breadcrumb-item"><router-link to="/">Dashboard</router-link></li>
                   <li class="breadcrumb-item active">Users</li>
                 </ul>
                 </div>

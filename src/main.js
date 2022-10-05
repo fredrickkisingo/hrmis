@@ -401,6 +401,10 @@ import PromotionTable from './views/pages/promotion/promotiontable.vue'
 import UserModal from './views/pages/users/usermodal.vue'
 import UserTable from './views/pages/users/usertable.vue'
 
+/*********user-roles component******/
+import UserRoles from './views/pages/user-roles/userroles.vue'
+import UserRoleModal from './views/pages/user-roles/userrolesmodal.vue'
+
 /*********training component******/
 import TrainingTable from './views/pages/training/trainingtype/trainingtable.vue'
 import ModalMainTraining from './views/pages/training/maintraining/modalmaintraining.vue'
@@ -863,6 +867,13 @@ app.component('promotiontable', PromotionTable );
 /*********users component******/
 app.component('usermodal', UserModal  );
 app.component('usertable', UserTable   );
+
+
+
+/*********user-roles component******/
+app.component('userroles', UserRoles   );
+app.component('userrolemodal', UserRoleModal  );
+
 
 /*********training component******/
 app.component('trainingtable', TrainingTable  );

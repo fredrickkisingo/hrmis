@@ -199,8 +199,10 @@ import users from "../views/pages/users";
 
 
 /********user rolesroute******/
-// import userroles from "../views/pages/user-roles";
+import userroles from "../views/pages/user-roles";
 
+// "email": "the@admin.com",
+// 	"password": "admin123",
 
 /********training route******/
 import maintraining from "../views/pages/training/maintraining";
@@ -1135,14 +1137,14 @@ const routes = [
       requiresAuth: true,
     },
   },
-  // {
-  //   path: "/user-roles",
-  //   name: "user-roles",
-  //   component: () => import("../views/pages/user-roles"),
-  //   meta: {
-  //     requiresAuth: true,
-  //   },
-  // },
+  {
+    path: "/user-roles",
+    name: "user-roles",
+    component: () => import("../views/pages/user-roles"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
   {
     path: "/user-reports",
     name: "user-reports",

@@ -382,14 +382,12 @@
               <p>Users</p>
               <ul>
                 <li><router-link v-bind:class="{'active': currentPath == 'users'}" to="/users"> Users </router-link></li>
+                <li><router-link v-bind:class="{'active': currentPath == 'user-roles'}" to="/user-roles"> Users Roles</router-link></li>
+
               </ul>
             </div>
 
-            <div v-bind:class="{'show active': currentPath == 'users'}" class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
-              <ul>
-                <li><router-link v-bind:class="{'active': currentPath == 'users'}" to="/users"> Users Roles</router-link></li>
-              </ul>
-            </div>
+           
             <div v-bind:class="{'show active': currentPath == 'approval-setting' || currentPath == 'settings'}" class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
               <p>Settings</p>
               <ul>

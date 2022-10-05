@@ -3,6 +3,7 @@ const datatable = (value) => {  // Datatable
         $(value).DataTable({
           "bFilter": true,
           "paging": true,
+          "searching":true
         });
     }
 }

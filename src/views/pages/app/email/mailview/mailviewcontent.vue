@@ -8,7 +8,7 @@
                       <div class="row">
                         <div class="col-sm-9">
                           <div class="text-ellipsis m-b-10">
-                            <span class="mail-view-title">HRMS Bootstrap Admin Template</span>
+                            <span class="mail-view-title">HRMIS</span>
                           </div>
                         </div>
                         <div class="col-sm-3">
