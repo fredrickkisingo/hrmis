@@ -402,7 +402,7 @@
     data() {
     return {
       addusercompany: ["Global Technologies", "Delta Infotech"],
-      adduserroll: ["Admin", "Client", "Employee"],
+      adduserrole: ["Admin", "Client", "Employee"],
       editusercompany: ["Global Technologies", "Delta Infotech"],
       edituserrole: ["Admin", "Client", "Employee"]
     }

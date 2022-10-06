@@ -1,5 +1,5 @@
 <template>
-    <div class="users">
+    <div class="user-roles">
       <div class="main-wrapper">
         <main-header></main-header>
   
@@ -16,7 +16,7 @@
                 <div class="page-head-box">
                   <h3>User Roles</h3>
                   <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><router-link to="/index">Dashboard</router-link></li>
+                    <li class="breadcrumb-item"><router-link to="/">Dashboard</router-link></li>
                     <li class="breadcrumb-item active">User Roles</li>
                   </ul>
                   </div>
@@ -69,6 +69,5 @@
       },
       mounted() {
       },
-      name: 'users'
     }
-  </Script>
+  </script>

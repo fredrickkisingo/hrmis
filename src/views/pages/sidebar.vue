@@ -378,7 +378,7 @@
                 <li><router-link v-bind:class="{'active': currentPath == 'activities'}" to="/activities"> Activities </router-link></li>
               </ul>
             </div>
-            <div v-bind:class="{'show active': currentPath == 'users'}" class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
+            <div v-bind:class="{'show active': currentPath == 'users' || currentPath == 'user-roles' }" class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-users-tab">
               <p>Users</p>
               <ul>
                 <li><router-link v-bind:class="{'active': currentPath == 'users'}" to="/users"> Users </router-link></li>
@@ -387,7 +387,6 @@
               </ul>
             </div>
 
-           
             <div v-bind:class="{'show active': currentPath == 'approval-setting' || currentPath == 'settings'}" class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
               <p>Settings</p>
               <ul>
