@@ -1,4 +1,4 @@
-# Smarthr
+# HRMIS SYSTEM
 
 This is Vue 3 version
 
