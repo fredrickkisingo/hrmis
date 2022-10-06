@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 /********dashboard routes******/
 import main from "../views/pages/dashboard/admin/main";
-import employee from "../views/pages/dashboard/employee";
+// import employee from "../views/pages/dashboard/employee";
 
 /********activities route******/
-import activities from "../views/pages/activities";
+// import activities from "../views/pages/activities";
 
 /********policies route******/
 import policies from "../views/pages/policies";
@@ -255,22 +255,22 @@ const routes = [
       next();
     },
   },
-  {
-    path: '/employee-dashboard',
-    name: 'employee-dashboard',
-    component: () => import('../views/pages/dashboard/employee'),
-    meta: {
-    requiresAuth: true
-}
-},
- {
-    path: '/activities',
-    name: 'activities',
-    component: () => import('../views/pages/activities'),
-    meta: {
-    requiresAuth: true
-}
-},
+//   {
+//     path: '/employee-dashboard',
+//     name: 'employee-dashboard',
+//     component: () => import('../views/pages/dashboard/employee'),
+//     meta: {
+//     requiresAuth: true
+// }
+// },
+//  {
+//     path: '/activities',
+//     name: 'activities',
+//     component: () => import('../views/pages/activities'),
+//     meta: {
+//     requiresAuth: true
+// }
+// },
   {
     path: "/applied-jobs",
     name: "applied-jobs",
