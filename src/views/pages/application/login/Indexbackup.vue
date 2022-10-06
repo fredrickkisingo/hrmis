@@ -11,7 +11,7 @@
                 <h3 class="account-title">Login</h3>
                 <p class="account-subtitle">Access to our dashboard</p>    
                 <!-- Account Form -->
-                <Form class="login" @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }">
+                <Form class="login" @submit.prevent="onSubmit" :validation-schema="schema" v-slot="{ errors }">
                   <div class="form-group">
                     <label>Email Address</label>
                     <Field name="email" type="text" value="admin@dreamguys.in" class="form-control" :class="{ 'is-invalid': errors.email }" />
