@@ -1,7 +1,7 @@
 <template>
 <!-- Add User Modal -->
         <div id="add_user" class="modal custom-modal fade" role="dialog">
-          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-dialog modal-dialog-centered modal-lg" id="new_user" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Add User</h5>
@@ -10,24 +10,24 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form method="post" @submit.prevent="createUser">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>First Name <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" v-model="form.firstname">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Last Name</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" v-model="form.lastname">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Username <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text"  v-model="form.username">
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -39,19 +39,19 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" v-model="form.password">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Confirm Password</label>
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" v-model="form.confirmpassword">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Phone </label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" v-model="form.phone">
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -60,120 +60,15 @@
                         <vue-select :options="adduserrole" />
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Company</label>
-                        <vue-select :options="addusercompany" />
-                      </div>
-                    </div>
+                  
                     <div class="col-sm-6">  
                       <div class="form-group">
                         <label>Employee ID <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control floating">
+                        <input type="text" class="form-control floating" v-model="form.employeeid">
                       </div>
                      </div>
                   </div>
-                  <div class="table-responsive m-t-15">
-                    <table class="table table-striped custom-table">
-                      <thead>
-                        <tr>
-                          <th>Module Permission</th>
-                          <th class="text-center">Read</th>
-                          <th class="text-center">Write</th>
-                          <th class="text-center">Create</th>
-                          <th class="text-center">Delete</th>
-                          <th class="text-center">Import</th>
-                          <th class="text-center">Export</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Employee</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Holidays</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Leaves</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Events</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  
                   <div class="submit-section">
                     <button class="btn btn-primary submit-btn">Submit</button>
                   </div>
@@ -245,12 +140,7 @@
                         <vue-select :options="edituserrole" />
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Company</label>
-                        <vue-select :options="editusercompany" />
-                      </div>
-                    </div>
+                   
                     <div class="col-sm-6">  
                       <div class="form-group">
                         <label>Employee ID <span class="text-danger">*</span></label>
@@ -258,107 +148,7 @@
                       </div>
                      </div>
                   </div>
-                  <div class="table-responsive m-t-15">
-                    <table class="table table-striped custom-table">
-                      <thead>
-                        <tr>
-                          <th>Module Permission</th>
-                          <th class="text-center">Read</th>
-                          <th class="text-center">Write</th>
-                          <th class="text-center">Create</th>
-                          <th class="text-center">Delete</th>
-                          <th class="text-center">Import</th>
-                          <th class="text-center">Export</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Employee</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Holidays</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Leaves</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Events</td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                          <td class="text-center">
-                            <input checked="" type="checkbox">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+               
                   <div class="submit-section">
                     <button class="btn btn-primary submit-btn">Save</button>
                   </div>
@@ -396,11 +186,24 @@
 </template>
 <script>
   import Vue from 'vue'
+  import axios from 'axios'
+
+
   export default {
     components: {  
     },
     data() {
     return {
+      users:{},
+      form :{
+        firstname:'',
+        lastname:'',
+        email:'',
+        password:'',
+        role:'',
+        employeeid:''
+
+      },
       addusercompany: ["Global Technologies", "Delta Infotech"],
       adduserrole: ["Admin", "Client", "Employee"],
       editusercompany: ["Global Technologies", "Delta Infotech"],

@@ -7,7 +7,7 @@
                     <tr>
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Company</th>
+                      <th>Department</th>
                       <th>Created Date</th>
                       <th>Role</th>
                       <th class="text-end">Action</th>
@@ -22,7 +22,7 @@
                         </h2>
                       </td>
                       <td>danielporter@example.com</td>
-                      <td>Dreamguy's Technologies</td>
+                      <td>IT</td>
                       <td>1 Jan 2013</td>
                       <td>
                         <span class="role-info role-bg-one">Admin</span>
@@ -40,7 +40,7 @@
                         </h2>
                       </td>
                       <td>johndoe@example.com</td>
-                      <td>Dreamguy's Technologies</td>
+                      <td>finance</td>
                       <td>1 Jan 2013</td>
                       <td>
                         <span class="role-info role-bg-one">Employee</span>
