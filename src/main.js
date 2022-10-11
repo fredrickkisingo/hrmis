@@ -921,7 +921,6 @@ app.component('vue-select', VueSelect);
 app.component('datepicker', DatePicker);
 
 app.use(pinia)
-app.use(VModal)
 app.use(VueSweetalert2)
 
 app.use(router)
