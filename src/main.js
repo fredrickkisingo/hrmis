@@ -445,6 +445,13 @@ const axios = require('axios');
 
 import jquery from 'jquery'; 
 window.$ = jquery
+// importing vuejs modal
+import {VModal} from 'vue-js-modal'
+
+//import sweet alert
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 import './assets/css/style.css'
 import './assets/js/bootstrap.bundle.min.js'
 import './assets/js/Chart.min.js'
@@ -452,6 +459,7 @@ import './assets/css/bootstrap4.min.css'
 import './assets/css/dataTables.bootstrap4.min.css'
 import './assets/css/jquery.dataTables.min.js'
 import './assets/css/dataTables.bootstrap4.min.js'
+
 
 const pinia = createPinia()
 const app = createApp(App)
@@ -914,6 +922,8 @@ app.component('vue-select', VueSelect);
 app.component('datepicker', DatePicker);
 
 app.use(pinia)
+app.use(VModal)
+app.use(VueSweetalert2)
 
 app.use(router)
 .mount('#app');
