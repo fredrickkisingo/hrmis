@@ -446,7 +446,6 @@ const axios = require('axios');
 import jquery from 'jquery'; 
 window.$ = jquery
 // importing vuejs modal
-import {VModal} from 'vue-js-modal'
 
 //import sweet alert
 import VueSweetalert2 from 'vue-sweetalert2';
