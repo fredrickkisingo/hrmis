@@ -68,12 +68,12 @@
                     Login
                   </button>
                 </div>
-                <div class="account-footer">
+                <!-- <div class="account-footer">
                   <p>
                     Don't have an account yet?
                     <router-link to="/register">Register</router-link>
                   </p>
-                </div>
+                </div> -->
               </form>
               <!-- /Account Form -->
             </div>
