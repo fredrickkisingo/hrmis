@@ -12,9 +12,15 @@
               <div class="modal-body">
                 <form>
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6"> 
                       <div class="form-group">
                         <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Middle Name</label>
                         <input class="form-control" type="text">
                       </div>
                     </div>
@@ -26,10 +32,81 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="col-form-label">Username <span class="text-danger">*</span></label>
+                        <label class="col-form-label">Family Name</label>
                         <input class="form-control" type="text">
                       </div>
                     </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Other Name(s)</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">  
+                      <div class="form-group">
+                        <label class="col-form-label">Date of birth <span class="text-danger">*</span></label>
+                        <div class="cal-icon">
+                          <datepicker v-model="startdate"  class="picker" 
+                          :editable="true"
+                          :clearable="false" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">  
+                      <div class="form-group">
+                        <label class="col-form-label">Date of Death(for death-in-service) <span class="text-danger">*</span></label>
+                        <div class="cal-icon">
+                          <datepicker v-model="startdate"  class="picker" 
+                          :editable="true"
+                          :clearable="false" />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Gender</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Marital Status</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Official Address</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Contact phone number</label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Email Address <span class="text-danger">*</span></label>
+                        <input class="form-control" type="email">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Mother's name<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="col-form-label">Health status(if applicable)* <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                      </div>
+                    </div>
+
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Role</label>
@@ -37,12 +114,7 @@
                       </div>
                     </div>
                     
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Email <span class="text-danger">*</span></label>
-                        <input class="form-control" type="email">
-                      </div>
-                    </div>
+                   
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label class="col-form-label">Password</label>
@@ -61,14 +133,7 @@
                         <input type="text" class="form-control">
                       </div>
                     </div>
-                    <div class="col-sm-6">  
-                      <div class="form-group">
-                        <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
-                        <div class="cal-icon">
-                          <datepicker v-model="startdate"  class="picker" 
-                          :editable="true"
-                          :clearable="false" />
-                    </div>
+                   
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -107,114 +172,7 @@
         </div>
         <!-- /Add Employee Modal -->
         
-        <!-- Edit Employee Modal -->
-        <div id="edit_employee" class="modal custom-modal fade" role="dialog">
-          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Edit Employee</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">First Name <span class="text-danger">*</span></label>
-                        <input class="form-control" value="John" type="text">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Last Name</label>
-                        <input class="form-control" value="Doe" type="text">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Username <span class="text-danger">*</span></label>
-                        <input class="form-control" value="johndoe" type="text">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Role</label>
-                        <vue-select :options="adduserrole" />
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Email <span class="text-danger">*</span></label>
-                        <input class="form-control" value="johndoe@example.com" type="email">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Password</label>
-                        <input class="form-control" value="johndoe" type="password">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Confirm Password</label>
-                        <input class="form-control" value="johndoe" type="password">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">  
-                      <div class="form-group">
-                        <label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
-                        <input type="text" value="FT-0001" readonly class="form-control floating">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">  
-                      <div class="form-group">
-                        <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
-                        <div class="cal-icon">
-                          <datepicker v-model="enddate"  class="picker" 
-                          :editable="true"
-                          :clearable="false" />
-                    </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Phone </label>
-                        <input class="form-control" value="9876543210" type="text">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="col-form-label">Company</label>
-                         <vue-select :options="editempcompany" />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Department <span class="text-danger">*</span></label>
-                         <vue-select :options="editempdepartment" />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>Designation <span class="text-danger">*</span></label>
-                         <vue-select :options="editempdesignation" />
-                      </div>
-                    </div>
-                  </div>
-               
-                  
-                  <div class="submit-section">
-                    <button class="btn btn-primary submit-btn">Save</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /Edit Employee Modal -->
+ 
         
         <!-- Delete Employee Modal -->
         <div class="modal custom-modal fade" id="delete_employee" role="dialog">
@@ -265,6 +223,9 @@
    
     },
     mounted() {
+    },
+    methods:{
+      
     }
   }
 </Script>
